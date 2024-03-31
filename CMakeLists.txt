@@ -26,6 +26,8 @@ endif()
 
 set(BUILD_TOUCH_INPUT_DEFAULT ${ANDROID})
 
+option(USE_SHARED_LIBS "Use libraries installed in the environment instead of vendored versions" OFF)
+
 option(BUILD_SDL "SDL Enabled" ON)
 option(BUILD_SDLGPU "SDL GPU Enabled" OFF)
 option(BUILD_SOKOL "Sokol Enabled" OFF)
@@ -99,6 +101,10 @@ if(RPI)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu11")
 endif()
 
+if(USE_SHARED_LIBS)
+    include(cmake/shared.cmake)
+endif()
+
 set(THIRDPARTY_DIR ${CMAKE_SOURCE_DIR}/vendor)
 
 include(cmake/gif.cmake)
@@ -126,7 +132,7 @@ include(cmake/png.cmake)
 
 include(cmake/studio.cmake)
 
-include(cmake/sdl.cmake)
+#include(cmake/sdl.cmake)
 include(cmake/sokol.cmake)
 include(cmake/libretro.cmake)
 include(cmake/n3ds.cmake)

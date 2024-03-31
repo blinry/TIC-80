@@ -14,7 +14,11 @@ if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
 
     set(SDL_SHARED OFF CACHE BOOL "" FORCE)
 
-    add_subdirectory(${THIRDPARTY_DIR}/sdl2)
+    if(USE_SHARED_SDL)
+        find_package(SDL2 REQUIRED)
+    else()
+        add_subdirectory(${THIRDPARTY_DIR}/sdl2)
+    endif()
 
 endif()
 
