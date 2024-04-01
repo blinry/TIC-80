@@ -29,6 +29,7 @@
             giflib
             zlib
             lua5_3
+            mruby
           ]) ++ (with packages; [
             zip
             argparse

@@ -36,6 +36,7 @@
 #include <mruby/variable.h>
 #include <mruby/value.h>
 #include <mruby/string.h>
+#include <mruby/internal.h>
 
 typedef struct {
     struct mrb_state* mrb;

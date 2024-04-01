@@ -48,7 +48,7 @@ set(TIC80CORE_SRC
     #${TIC80CORE_DIR}/api/squirrel.c
     ${TIC80CORE_DIR}/api/python.c
     #${TIC80CORE_DIR}/api/wren.c
-    #${TIC80CORE_DIR}/api/mruby.c
+    ${TIC80CORE_DIR}/api/mruby.c
     #${TIC80CORE_DIR}/api/janet.c
     #${TIC80CORE_DIR}/api/wasm.c
 )
@@ -77,7 +77,7 @@ target_link_libraries(tic80core
     #squirrel
     pocketpy
     #wren
-    #mruby
+    mruby
     #janet
     #wasm
 )
@@ -85,6 +85,7 @@ target_link_libraries(tic80core
 target_compile_definitions(tic80core PRIVATE
     TIC_BUILD_WITH_LUA=1
     TIC_BUILD_WITH_PYTHON=1
+    TIC_BUILD_WITH_MRUBY=1
 )
 
 
@@ -145,6 +146,7 @@ target_compile_definitions(tic80studio PUBLIC BUILD_EDITORS)
 target_compile_definitions(tic80studio PRIVATE
     TIC_BUILD_WITH_LUA=1
     TIC_BUILD_WITH_PYTHON=1
+    TIC_BUILD_WITH_MRUBY=1
 )
 
 
