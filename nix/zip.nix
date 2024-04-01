@@ -1,7 +1,8 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, cmake
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  cmake,
 }:
 stdenv.mkDerivation rec {
   pname = "zip";
@@ -14,5 +15,5 @@ stdenv.mkDerivation rec {
     hash = "sha256-VGIDbhdBoLzU+7MQXmwe+SoMRYuYRWlNnW9NDTvejzg=";
   };
 
-  buildInputs = [ cmake ];
+  buildInputs = [cmake];
 }

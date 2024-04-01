@@ -1,7 +1,8 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, cmake
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  cmake,
 }:
 stdenv.mkDerivation rec {
   pname = "pocketpy";
@@ -14,7 +15,7 @@ stdenv.mkDerivation rec {
     hash = "sha256-Vrfj6AVxu+mnGH9zEe4tlEaWz1HyOJAyqNUukuRnoq4=";
   };
 
-  nativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [cmake];
 
   installPhase = ''
     install -D -m755 libpocketpy.so $out/lib/libpocketpy.so
