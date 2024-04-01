@@ -63,4 +63,4 @@ endif()
 
 target_compile_definitions(tic80studio PUBLIC BUILD_EDITORS)
 
-target_compile_definitions(tic80studio PRIVATE TIC_BUILD_WITH_LUA=1)
+#target_compile_definitions(tic80studio PRIVATE TIC_BUILD_WITH_LUA=1)
