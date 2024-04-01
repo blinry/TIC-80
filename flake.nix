@@ -13,6 +13,7 @@
         zip = pkgs.callPackage ./nix/zip.nix {};
         msf-gif = pkgs.callPackage ./nix/msf-gif.nix {};
         argparse = pkgs.callPackage ./nix/argparse.nix {};
+        pocketpy = pkgs.callPackage ./nix/pocketpy.nix {};
       };
 
       devShells.default =
@@ -34,6 +35,7 @@
             blip-buf
             zip
             msf-gif
+            pocketpy
           ]);
           shellHook = ''
             unset LD

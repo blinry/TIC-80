@@ -33,7 +33,7 @@
 #endif
 
 #if defined(CRT_SHADER_SUPPORT)
-#include <SDL_gpu.h>
+#include <SDL2/SDL_gpu.h>
 #else
 #include <SDL.h>
 #endif
