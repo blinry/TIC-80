@@ -27,7 +27,7 @@
 #include "studio/net.h"
 #include "studio/config.h"
 #include "ext/png.h"
-#include "zip.h"
+#include "zip/zip.h"
 #include "studio/demos.h"
 #include "retro_endianness.h"
 

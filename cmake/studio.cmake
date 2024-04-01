@@ -43,8 +43,10 @@ if(WIN32)
 endif()
 
 target_include_directories(tic80studio PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(tic80studio PUBLIC ${CMAKE_SOURCE_DIR}/src)
+target_include_directories(tic80studio PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
-target_link_libraries(tic80studio tic80core zip wave_writer argparse giflib png)
+target_link_libraries(tic80studio tic80core zip wave_writer argparse gif png)
 
 if(USE_NAETT)
     target_compile_definitions(tic80studio PRIVATE USE_NAETT)
@@ -60,3 +62,5 @@ if(BUILD_SDLGPU)
 endif()
 
 target_compile_definitions(tic80studio PUBLIC BUILD_EDITORS)
+
+target_compile_definitions(tic80studio PRIVATE TIC_BUILD_WITH_LUA=1)

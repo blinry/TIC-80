@@ -82,10 +82,12 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
             ${CMAKE_SOURCE_DIR}/include
             ${CMAKE_SOURCE_DIR}/src)
 
-    target_link_libraries(tic80core${SCRIPT} blipbuf zlib)
+    target_link_libraries(tic80core${SCRIPT} blipbuf z)
+    #target_include_directories(tic80core{SCRIPT} PUBLIC $ENV{SDLGPU_INCLUDE_DIR})
 
     if(BUILD_WITH_LUA)
         target_link_libraries(tic80core${SCRIPT} lua)
+        target_compile_definitions(tic80core PRIVATE TIC_BUILD_WITH_LUA=1)
     endif()
 
     if(BUILD_WITH_JS)
@@ -122,7 +124,7 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
 
     if(${BUILD_DEPRECATED})
         target_compile_definitions(tic80core${SCRIPT} PRIVATE BUILD_DEPRECATED)
-        target_link_libraries(tic80core${SCRIPT} giflib)
+        target_link_libraries(tic80core${SCRIPT} gif)
     endif()
 
     if(LINUX)
